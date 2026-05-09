@@ -23,13 +23,13 @@ jobs:
     strategy:
       matrix:
         include:
-        - { os: ubuntu.22.04, arch: x64,   upstream: ubuntu.22.04-x64 }
-        - { os: ubuntu.22.04, arch: arm64, upstream: ubuntu.22.04-arm64 }
+        # - { os: ubuntu.22.04, arch: x64,   upstream: ubuntu.22.04-x64 }
+        # - { os: ubuntu.22.04, arch: arm64, upstream: ubuntu.22.04-arm64 }
         # - { os: win,          arch: x64,   upstream: win-x64 }
         # - { os: win,          arch: x86,   upstream: win-x86 }
         # - { os: win,          arch: arm64, upstream: win-arm64 }
-        - { os: osx,          arch: x64,   upstream: osx-x64 }
-        - { os: osx,          arch: arm64, upstream: osx-arm64 }
+        # - { os: osx,          arch: x64,   upstream: osx-x64 }
+        # - { os: osx,          arch: arm64, upstream: osx-arm64 }
         # - { os: centos.7,     arch: x64,   upstream: centos.7-x64 }
         # - { os: centos.7,     arch: arm64, upstream: centos.7-arm64 }
         - { os: linux,        arch: x64,   upstream: rhel.8-x64 }
