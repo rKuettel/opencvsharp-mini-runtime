@@ -25,19 +25,19 @@ jobs:
         include:
         - { os: ubuntu.22.04, arch: x64,   upstream: ubuntu.22.04-x64 }
         - { os: ubuntu.22.04, arch: arm64, upstream: ubuntu.22.04-arm64 }
-        - { os: win,          arch: x64,   upstream: win-x64 }
-        - { os: win,          arch: x86,   upstream: win-x86 }
-        - { os: win,          arch: arm64, upstream: win-arm64 }
+        # - { os: win,          arch: x64,   upstream: win-x64 }
+        # - { os: win,          arch: x86,   upstream: win-x86 }
+        # - { os: win,          arch: arm64, upstream: win-arm64 }
         - { os: osx,          arch: x64,   upstream: osx-x64 }
         - { os: osx,          arch: arm64, upstream: osx-arm64 }
-        - { os: centos.7,     arch: x64,   upstream: centos.7-x64 }
-        - { os: centos.7,     arch: arm64, upstream: centos.7-arm64 }
+        # - { os: centos.7,     arch: x64,   upstream: centos.7-x64 }
+        # - { os: centos.7,     arch: arm64, upstream: centos.7-arm64 }
         - { os: linux,        arch: x64,   upstream: rhel.8-x64 }
         - { os: linux,        arch: arm64, upstream: rhel.8-arm64 }
-        - { os: linux-musl,   arch: x64,   upstream: alpine.3.22-x64 }
-        - { os: linux-musl,   arch: arm64, upstream: alpine.3.22-arm64 }
-        - { os: android,      arch: arm64, upstream: android-arm64 }
-        - { os: android,      arch: x64,   upstream: android-x64 }
+        # - { os: linux-musl,   arch: x64,   upstream: alpine.3.22-x64 }
+        # - { os: linux-musl,   arch: arm64, upstream: alpine.3.22-arm64 }
+        # - { os: android,      arch: arm64, upstream: android-arm64 }
+        # - { os: android,      arch: x64,   upstream: android-x64 }
 
     steps:
     - name: Download OpenCvSharp Artifacts
@@ -66,11 +66,11 @@ jobs:
       run: |
         set -euo pipefail
 
-        PKG_ID="Sdcb.OpenCvSharp4.mini.runtime.${{ matrix.os }}-${{ matrix.arch }}"
-        AUTHOR="sdcb"
+        PKG_ID="rKuettel.OpenCvSharp4.mini.runtime.${{ matrix.os }}-${{ matrix.arch }}"
+        AUTHOR="rKuettel"
         LICENSE="Apache-2.0"
-        GIT_URL="https://github.com/sdcb/opencvsharp-mini-runtime"
-        TAGS="Sdcb OpenCV OpenCvSharp OpenCvSharp4"
+        GIT_URL="https://github.com/rKuettel/opencvsharp-mini-runtime"
+        TAGS="rKuettel OpenCV OpenCvSharp OpenCvSharp4"
         YEAR=$(date +%Y)
 
         case "${{ matrix.os }}" in
@@ -176,15 +176,15 @@ jobs:
     strategy:
       matrix:
         include:
-          - { os: ubuntu.22.04, arch: x64,   runs-on: ubuntu-22.04,     upstream: ubuntu.22.04-x64 }
-          - { os: ubuntu.22.04, arch: arm64, runs-on: ubuntu-22.04-arm, upstream: ubuntu.22.04-arm64 }
-          - { os: win,          arch: x64,   runs-on: windows-2022,     upstream: win-x64 }
-          - { os: win,          arch: x86,   runs-on: windows-2022,     upstream: win-x86 }
-          - { os: win,          arch: arm64, runs-on: windows-11-arm,   upstream: win-arm64 }
+          # - { os: ubuntu.22.04, arch: x64,   runs-on: ubuntu-22.04,     upstream: ubuntu.22.04-x64 }
+          # - { os: ubuntu.22.04, arch: arm64, runs-on: ubuntu-22.04-arm, upstream: ubuntu.22.04-arm64 }
+          # - { os: win,          arch: x64,   runs-on: windows-2022,     upstream: win-x64 }
+          # - { os: win,          arch: x86,   runs-on: windows-2022,     upstream: win-x86 }
+          # - { os: win,          arch: arm64, runs-on: windows-11-arm,   upstream: win-arm64 }
           - { os: osx,          arch: x64,   runs-on: macos-13,         upstream: osx-x64 }
           - { os: osx,          arch: arm64, runs-on: macos-14,         upstream: osx-arm64 }
-          - { os: centos.7,     arch: x64,   runs-on: ubuntu-22.04,     upstream: centos.7-x64 }
-          - { os: centos.7,     arch: arm64, runs-on: ubuntu-22.04-arm, upstream: centos.7-arm64 }
+          # - { os: centos.7,     arch: x64,   runs-on: ubuntu-22.04,     upstream: centos.7-x64 }
+          # - { os: centos.7,     arch: arm64, runs-on: ubuntu-22.04-arm, upstream: centos.7-arm64 }
           - { os: linux,        arch: x64,   runs-on: ubuntu-22.04,     upstream: rhel.8-x64 }
           - { os: linux,        arch: arm64, runs-on: ubuntu-22.04-arm, upstream: rhel.8-arm64 }
           # - { os: linux-musl,   arch: x64,   runs-on: ubuntu-22.04,     upstream: alpine.3.22-x64 }
