@@ -71,10 +71,10 @@ jobs:
         ref: ${{ env.OPENCVSHARP_VERSION }}
         path: opencvsharp
 
-    - name: Apply Patches
-      run: |
-        cd opencvsharp
-        git apply --ignore-whitespace ../eng/opencvsharp.patch
+    # - name: Apply Patches
+    #   run: |
+    #     cd opencvsharp
+    #     git apply --ignore-whitespace ../eng/opencvsharp.patch
 
     - name: Pull Docker Image
       if: matrix.image != ''
