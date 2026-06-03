@@ -159,6 +159,8 @@ jobs:
               cat opencv/3rdparty/libwebp/src/dsp/yuv_neon.c
               echo "::endgroup::"
             fi
+          elif [[ ${{ matrix.os }} == "rhel.8" && "${{ matrix.arch }}" == "arm64" ]]; then
+            EXTRA_FLAGS+=" -DENABLE_NEON=ON"
           elif [[ "${{ matrix.os }}" == "android" ]]; then
             echo "Configuring for Android / ${{ matrix.arch }}"
           
