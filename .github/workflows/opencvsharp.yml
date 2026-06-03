@@ -71,10 +71,10 @@ jobs:
         ref: ${{ env.OPENCVSHARP_VERSION }}
         path: opencvsharp
 
-    # - name: Apply Patches
-    #   run: |
-    #     cd opencvsharp
-    #     git apply --ignore-whitespace ../eng/opencvsharp.patch
+    - name: Apply Patches
+      run: |
+        cd opencvsharp
+        git apply --ignore-whitespace ../eng/opencvsharp.patch
 
     - name: Pull Docker Image
       if: matrix.image != ''
@@ -196,7 +196,6 @@ jobs:
           set -eux
           cd opencvsharp/build
           if [[ "${{ matrix.os }}" =~ ^win ]]; then
-            cmake -DNO_HIGHGUI=TRUE ..
             cmake --build . --parallel --config Release
           else
             make -j$(nproc)
