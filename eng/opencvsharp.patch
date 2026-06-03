@@ -1,3 +1,16 @@
+diff --git a/src/OpenCvSharpExtern/CMakeLists.txt b/src/OpenCvSharpExtern/CMakeLists.txt
+index fb98cd4e..1dda87b2 100644
+--- a/src/OpenCvSharpExtern/CMakeLists.txt
++++ b/src/OpenCvSharpExtern/CMakeLists.txt
+@@ -9,7 +9,7 @@ IF(APPLE)
+     link_directories(/usr/local/lib)
+ ENDIF()
+ 
+-file(GLOB OPENCVSHARP_FILES *.cpp)
++file(GLOB OPENCVSHARP_FILES core*.cpp imgp*.cpp imgc*.cpp std*.cpp calib3d*.cpp)
+ 
+ # Resolve Protobuf target before OpenCV config is loaded.
+ if(APPLE)
 diff --git a/src/OpenCvSharpExtern/include_opencv.h b/src/OpenCvSharpExtern/include_opencv.h
 index 77abc1fc..e0f3e560 100644
 --- a/src/OpenCvSharpExtern/include_opencv.h
