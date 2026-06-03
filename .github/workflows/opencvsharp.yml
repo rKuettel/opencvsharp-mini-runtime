@@ -196,6 +196,7 @@ jobs:
           set -eux
           cd opencvsharp/build
           if [[ "${{ matrix.os }}" =~ ^win ]]; then
+            cmake -DNO_HIGHGUI=TRUE ..
             cmake --build . --parallel --config Release
           else
             make -j$(nproc)
