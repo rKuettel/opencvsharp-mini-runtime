@@ -31,8 +31,8 @@ jobs:
         # - { os: osx,          arch: arm64, runs-on: macos-14 }
         # - { os: centos.7,     arch: x64,   runs-on: ubuntu-22.04,     image: oraclelinux:7 }
         # - { os: centos.7,     arch: arm64, runs-on: ubuntu-22.04-arm, image: oraclelinux:7 }
-        - { os: rhel.8,       arch: x64,   runs-on: ubuntu-22.04,     image: oraclelinux:8 }
-        - { os: rhel.8,       arch: arm64, runs-on: ubuntu-22.04-arm, image: oraclelinux:8 }
+        - { os: rhel.10,       arch: x64,   runs-on: ubuntu-22.04,     image: oraclelinux:10 }
+        - { os: rhel.10,       arch: arm64, runs-on: ubuntu-22.04-arm, image: oraclelinux:10 }
         # - { os: alpine.3.22,  arch: x64,   runs-on: ubuntu-22.04,     image: alpine:3.22 }
         # - { os: alpine.3.22,  arch: arm64, runs-on: ubuntu-22.04-arm, image: alpine:3.22 }
         # - { os: android,      arch: arm64, runs-on: ubuntu-22.04 }
@@ -97,11 +97,11 @@ jobs:
             yum-config-manager --enable ol7_developer_epel
         EOS
           )
-        elif [[ "${{ matrix.os }}" == "rhel.8" ]]; then
+        elif [[ "${{ matrix.os }}" == "rhel.10" ]]; then
           script=$(
             cat <<'EOS'
             set -eux
-            dnf config-manager --set-enabled ol8_codeready_builder
+            dnf config-manager --set-enabled ol10_codeready_builder
         EOS
           )
         elif [[ "${{ matrix.os }}" == "rhel.9" ]]; then
